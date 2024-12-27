@@ -27,6 +27,6 @@ customers!: Customer[];
 constructor(private customerService: CustomerService) {}
 
 ngOnInit () {
-  this.customerService.getCustomersMedium().then((customers) => (this.customers = customers))
+  this.customerService.getCustomersKevin().then((customers) => (this.customers = customers))
 }
 }

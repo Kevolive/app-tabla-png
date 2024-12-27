@@ -9008,7 +9008,34 @@ export class CustomerService {
         ];
     }
 
+    getDatos(){
+      return [
+        {
+            id: 1140858067,
+            name: 'Kevin Olivella',
+            city: 'Bello',
+            country: {
+                name: 'Colombia',
+                code: 'Col'
+            },
+            company: 'Conexpacios',
+            date: '2015-09-13',
+            status: 'Helper',
+            verified: true,
+            activity: 17,
+            representative: {
+                name: 'Miguel Múnera',
+                image: 'ionibowcher.png'
+            },
+            balance: 70663
+        }];
+    }
+
     constructor(private http: HttpClient) {}
+
+    getCustomersKevin() {
+      return Promise.resolve(this.getDatos().slice(0, 5));
+  }
 
     getCustomersMini() {
         return Promise.resolve(this.getData().slice(0, 5));

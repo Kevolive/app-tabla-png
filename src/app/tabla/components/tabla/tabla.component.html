@@ -10,16 +10,18 @@
   >
       <ng-template pTemplate="header">
           <tr>
+              <th style="width:25%">Id</th>
               <th style="width:25%">Nombre</th>
-              <th style="width:25%">País</th>
+              <th style="width:25%">Ciudad</th>
               <th style="width:25%">Compañia</th>
               <th style="width:25%">Representative</th>
           </tr>
       </ng-template>
       <ng-template pTemplate="body" let-customer>
           <tr>
+              <td>{{ customer.id }}</td>
               <td>{{ customer.name }}</td>
-              <td>{{ customer.country.name }}</td>
+              <td>{{ customer.city }}</td>
               <td>{{ customer.company }}</td>
               <td>{{ customer.representative.name }}</td>
           </tr>

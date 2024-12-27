@@ -3,6 +3,11 @@ export interface Country {
   code?: string;
 }
 
+export interface City {
+  name: string,
+  code: string
+}
+
 export interface Representative {
   name?: string;
   image?: string;
@@ -11,6 +16,7 @@ export interface Representative {
 export interface Customer {
   id?: number;
   name?: string;
+  city?: string;
   country?: Country;
   company?: string;
   date?: string | Date;

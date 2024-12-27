@@ -1,23 +1,32 @@
-
-
+<h1>{{ title }}</h1>
 <div class="card flex flex-column md:flex-row gap-3">
   <p-inputGroup>
     <p-inputGroupAddon>
-        <i class="pi pi-user">Nombre</i>
+        Nombre
     </p-inputGroupAddon>
-    <input pInputText placeholder="Username" />
+    <input pInputText  />
   </p-inputGroup>
+
+  <p-multiSelect
+  [options]="cities"
+  [(ngModel)]="selectedCities"
+  optionLabel="name"
+  placeholder="Select Cities" />
   <p-inputGroup>
-    <p-inputGroupAddon>Apellido</p-inputGroupAddon>
-    <input type="text" pInputText placeholder="Lastname" />
+    <p-inputGroupAddon
+    >Ciudad</p-inputGroupAddon>
+    <input type="text" pInputText  />
     </p-inputGroup>
-  <p-inputGroup>
-    <p-inputGroupAddon>Ciudad</p-inputGroupAddon>
-    <input type="text" pInputText placeholder="City" />
+    <p-inputGroup>
+    <p-inputGroupAddon>Compañia</p-inputGroupAddon>
+    <input type="text" pInputText  />
   </p-inputGroup>
-
-
+  <p-inputGroup>
+    <p-inputGroupAddon>Representante</p-inputGroupAddon>
+    <input type="text" pInputText  />
+  </p-inputGroup>
 </div>
+
 <div style="margin: 10px;">
   <app-boton-agregar></app-boton-agregar>
 </div>
