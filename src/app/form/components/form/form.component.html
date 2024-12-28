@@ -1,33 +1,52 @@
 <h1>{{ title }}</h1>
+
+<form class="row" (ngSubmit)="emitCustomer()">
+
+
+
 <div class="card flex flex-column md:flex-row gap-3">
+
   <p-inputGroup>
     <p-inputGroupAddon>
         Nombre
     </p-inputGroupAddon>
-    <input pInputText  />
+    <input type="text" [(ngModel)]="customer.name" name="name" pInputText  />
   </p-inputGroup>
 
-  <p-multiSelect
+  <!-- <p-multiSelect
   [options]="cities"
   [(ngModel)]="selectedCities"
   optionLabel="name"
-  placeholder="Select Cities" />
+  placeholder="Select Cities" /> -->
+
   <p-inputGroup>
     <p-inputGroupAddon
     >Ciudad</p-inputGroupAddon>
-    <input type="text" pInputText  />
+    <input type="text" [(ngModel)]="customer.city" name="city" pInputText  />
     </p-inputGroup>
+
+
     <p-inputGroup>
     <p-inputGroupAddon>Compañia</p-inputGroupAddon>
-    <input type="text" pInputText  />
+    <input type="text" [(ngModel)]="customer.company" name="company" pInputText  />
   </p-inputGroup>
+
+
   <p-inputGroup>
-    <p-inputGroupAddon>Representante</p-inputGroupAddon>
-    <input type="text" pInputText  />
+    <p-inputGroupAddon>Estado</p-inputGroupAddon>
+    <input type="text" [(ngModel)]="customer.status" name="status" pInputText  />
   </p-inputGroup>
 </div>
 
-<div style="margin: 10px;">
+<!-- <div style="margin: 10px;">
   <app-boton-agregar></app-boton-agregar>
+</div> -->
+<div class="card flex flex-wrap gap-3 justify-content-center" style="margin: 10px;">
+
+  <p-button routerLink="/tabla" label="Agregar" severity="help" (onClick)="emitCustomer()" />
+
 </div>
 
+<pre>{{ customer | json }}</pre>
+
+</form>

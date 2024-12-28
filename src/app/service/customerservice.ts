@@ -9031,6 +9031,10 @@ export class CustomerService {
         }];
     }
 
+    onNewCustomer() {
+
+    }
+
     constructor(private http: HttpClient) {}
 
     getCustomersKevin() {

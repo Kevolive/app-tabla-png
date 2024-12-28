@@ -7,6 +7,8 @@ import { BotonAgregarComponent } from '../../../buttonAgregar/components/boton/b
 import { City, Customer } from '../../../domain/customer';
 import { FormsModule } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
 
 
 
@@ -16,48 +18,62 @@ import { MultiSelectModule } from 'primeng/multiselect';
   selector: 'app-form',
   standalone: true,
 
-  imports: [InputGroupModule, InputGroupAddonModule, BotonAgregarComponent, FormsModule, MultiSelectModule  ],
+  imports: [InputGroupModule, InputGroupAddonModule, FormsModule, MultiSelectModule, CommonModule, ButtonModule  ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
-export class FormComponent implements OnInit {
+export class FormComponent  {
   title = 'Formulario de registro';
-  @Input()
-  public customer: Customer[] = [
+
+  public customer: Customer =
     {
-      id: 1140858067,
-      name: 'Kevin Olivella',
-      city: 'Bello',
-      company: 'Conexpacios',
-    },
-  ];
+      id: 0,
+      name: '',
+      city: '',
+      company: '',
+      status: '',
+
+    };
+
+    emitCustomer(): void {
+      console.log(this.customer);
 
 
-  public cities!: City[];
-  selectedCities!: City[];
-  ngOnInit(): void {
-    this.cities= [
-      {
-        name: 'Bello',
-        code: 'BL'
-      },
-      {
-        name: 'Santa Marta',
-        code: 'SM'
-      },
-      {
-        name: 'Villanueva',
-        code: 'VN'
-      },
-      {
-        name: 'Valledupar',
-        code: 'VL'
-      },
-      {
-        name: 'Barranquilla',
-        code: 'Quilla'
-      }
-    ];
-    this.selectedCities=[];
-  }
+      this.customer.name= '';
+      this.customer.city= '';
+      this.customer.company= '';
+      this.customer.status= '';
+
+    }
+
+
+
+
+//   public cities!: City[];
+//   selectedCities!: City[];
+//   ngOnInit(): void {
+//     this.cities= [
+//       {
+//         name: 'Bello',
+//         code: 'BL'
+//       },
+//       {
+//         name: 'Santa Marta',
+//         code: 'SM'
+//       },
+//       {
+//         name: 'Villanueva',
+//         code: 'VN'
+//       },
+//       {
+//         name: 'Valledupar',
+//         code: 'VL'
+//       },
+//       {
+//         name: 'Barranquilla',
+//         code: 'Quilla'
+//       }
+//     ];
+//     this.selectedCities=[];
+//   }
 }
